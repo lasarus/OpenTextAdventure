@@ -15,6 +15,9 @@ typedef struct item
 
 typedef struct room
 {
+  char * name;
+  char * description;
+
   int neighbour_rooms[4];
 } room_t;
 
@@ -30,13 +33,14 @@ typedef struct adventure
 
   int item_count;
   item_t * items;
+
+  adventurer_t adventurer;
 } adventure_t;
 
 adventure_t * new_adventure();
 void free_adventure(adventure_t * adventure);
 
-void init_adventure(adeventure_t * adventure);
-
-void update_adventure(adventure_t * adventure);
+void init_adventure(adventure_t * adventure);
+int update_adventure(adventure_t * adventure);
 
 #endif
